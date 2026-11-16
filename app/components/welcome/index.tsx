@@ -142,7 +142,7 @@ const Welcome: FC<IWelcomeProps> = ({
                     fileUploadConfig: {} as any,
                   }}
                   onChange={(files) => {
-                    setInputs({ ...inputs, [item.key]: files[0] })
+                    setInputs(previous => ({ ...previous, [item.key]: files[0] }))
                   }}
                   value={inputs?.[item.key] || []}
                 />
@@ -159,7 +159,7 @@ const Welcome: FC<IWelcomeProps> = ({
                     fileUploadConfig: {} as any,
                   }}
                   onChange={(files) => {
-                    setInputs({ ...inputs, [item.key]: files })
+                    setInputs(previous => ({ ...previous, [item.key]: files }))
                   }}
                   value={inputs?.[item.key] || []}
                 />
